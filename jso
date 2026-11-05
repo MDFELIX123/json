@@ -14,12 +14,12 @@
   ],
   "Tweaks": [
     {
-      "Name": "Germany SSH WebSocket SSL",
+      "Name": "BetterRoaming SSL",
       "Direct": false,
       "Websocket": true,
-      "Bug": "ov-germany1.09vpn.com",
+      "Bug": "my.betterroaming.com",
       "SSL": true,
-      "Payload": "GET wss://bug.com [protocol][crlf]Host: ov-germany1.09vpn.com[crlf]Upgrade: websocket[crlf][crlf]",
+      "Payload": "",
       "CustomProxy": false,
       "ProxyHost": "",
       "ProxyPort": "",

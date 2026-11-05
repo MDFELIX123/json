@@ -9,7 +9,7 @@
       "SSLPort": "443",
       "ProxyPort": "3128",
       "SSHUser": "u6865044716",
-      "SSHPassword": "ENTER_YOUR_PASSWORD"
+      "SSHPassword": "u6865044716"
     }
   ],
   "Tweaks": [

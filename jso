@@ -9,17 +9,17 @@
       "SSLPort": "443",
       "ProxyPort": "3128",
       "SSHUser": "u6865044716",
-      "SSHPassword": "u6865044716"
+      "SSHPassword": "YOUR_SSH_PASSWORD"
     }
   ],
   "Tweaks": [
     {
-      "Name": "BetterRoaming SSL",
+      "Name": "BetterRoaming SSL (Fixed HTTP Payload)",
       "Direct": false,
       "Websocket": true,
-      "Bug": "my.betterroaming.com",
+      "Bug": "www.betterroaming.com",
       "SSL": true,
-      "Payload": "",
+      "Payload": "GET / HTTP/1.1\r\nHost: www.betterroaming.com\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nUser-Agent: Mozilla/5.0\r\n\r\n",
       "CustomProxy": false,
       "ProxyHost": "",
       "ProxyPort": "",

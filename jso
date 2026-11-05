@@ -14,7 +14,7 @@
   ],
   "Tweaks": [
     {
-      "Name": "BetterRoaming SSL (Fixed HTTP Payload)",
+      "Name": "BetterRoaming",
       "Direct": false,
       "Websocket": true,
       "Bug": "www.betterroaming.com",

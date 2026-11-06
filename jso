@@ -2,77 +2,89 @@
   "version": 1,
   "servers": [
     {
-      "id": "us_09vpn_ip",
-      "name": "United States #1 🇺🇸",
+      "id": "us_fast_ip",
+      "name": "United States #1 (38.107.236.166) 🇺🇸",
       "flag": "🇺🇸",
       "host": "38.107.236.166",
-      "sshPort": 443,
-      "sslPort": 443,
-      "username": "u3156189202",
-      "password": "u3156189202",
-      "pingMs": 45
-    },
-    {
-      "id": "us_09vpn_domain",
-      "name": "United States VIP 🇺🇸",
-      "flag": "🇺🇸",
-      "host": "3h-unitedstates3.09vpn.com",
-      "sshPort": 443,
+      "sshPort": 143,
       "sslPort": 443,
       "username": "u3156189202",
       "password": "u3156189202",
       "pingMs": 42
+    },
+    {
+      "id": "us_fast_domain",
+      "name": "United States VIP (09vpn.com) 🇺🇸",
+      "flag": "🇺🇸",
+      "host": "3h-unitedstates3.09vpn.com",
+      "sshPort": 143,
+      "sslPort": 443,
+      "username": "u3156189202",
+      "password": "u3156189202",
+      "pingMs": 45
     }
   ],
   "tweaks": [
     {
-      "id": "ws_tls_direct",
-      "name": "WebSocket TLS Direct",
+      "id": "dropbear_direct_143",
+      "name": "Dropbear Direct (Port 143)",
+      "country": "Global",
+      "carrier": "Direct Dropbear",
+      "tunnelType": "SSH_DIRECT",
+      "remoteProxy": "38.107.236.166:143"
+    },
+    {
+      "id": "dropbear_direct_109",
+      "name": "Dropbear Direct (Port 109)",
+      "country": "Global",
+      "carrier": "Direct Dropbear",
+      "tunnelType": "SSH_DIRECT",
+      "remoteProxy": "38.107.236.166:109"
+    },
+    {
+      "id": "ws_no_tls_8880",
+      "name": "WebSocket No TLS (Port 8880)",
       "country": "Global",
       "carrier": "All Networks",
       "tunnelType": "SSH_WEBSOCKET",
       "sniHost": "3h-unitedstates3.09vpn.com",
-      "payload": "GET / HTTP/1.1[crlf]Host: 3h-unitedstates3.09vpn.com[crlf]Upgrade: websocket[crlf]Connection: Upgrade[crlf][crlf]",
-      "remoteProxy": "38.107.236.166:443"
-    },
-    {
-      "id": "ws_no_tls_8880",
-      "name": "WebSocket Direct (Port 8880)",
-      "country": "Global",
-      "carrier": "Direct",
-      "tunnelType": "SSH_WEBSOCKET",
-      "sniHost": "3h-unitedstates3.09vpn.com",
-      "payload": "GET / HTTP/1.1[crlf]Host: 3h-unitedstates3.09vpn.com[crlf]Upgrade: websocket[crlf]Connection: Upgrade[crlf][crlf]",
+      "payload": "GET / HTTP/1.1[crlf]Host: 3h-unitedstates3.09vpn.com[crlf]Upgrade: websocket[crlf][crlf]",
       "remoteProxy": "38.107.236.166:8880"
     },
     {
-      "id": "ssl_tls_direct",
-      "name": "Direct SSL / TLS (Port 443)",
+      "id": "ws_tls_443",
+      "name": "WebSocket TLS (Port 443)",
       "country": "Global",
-      "carrier": "Direct",
-      "tunnelType": "SSH_SSL_SNI",
+      "carrier": "All Networks",
+      "tunnelType": "SSH_WEBSOCKET",
       "sniHost": "3h-unitedstates3.09vpn.com",
-      "payload": "",
-      "remoteProxy": ""
+      "payload": "GET wss://bug.com [protocol][crlf]Host: 3h-unitedstates3.09vpn.com[crlf]Upgrade: websocket[crlf][crlf]",
+      "remoteProxy": "38.107.236.166:443"
     },
     {
-      "id": "glo_free_unlimited",
-      "name": "Glo 0.00KB Free Unlimited",
+      "id": "openssh_direct_22",
+      "name": "OpenSSH Direct (Port 22)",
+      "country": "Global",
+      "carrier": "Direct OpenSSH",
+      "tunnelType": "SSH_DIRECT",
+      "remoteProxy": "38.107.236.166:22"
+    },
+    {
+      "id": "ssh_ssl_sni_443",
+      "name": "SSL/TLS Direct (Port 443)",
+      "country": "Global",
+      "carrier": "Direct TLS",
+      "tunnelType": "SSH_SSL_SNI",
+      "sniHost": "3h-unitedstates3.09vpn.com",
+      "remoteProxy": "38.107.236.166:443"
+    },
+    {
+      "id": "glo_unlimited_free",
+      "name": "Glo Free Unlimited 0.00KB",
       "country": "Nigeria",
       "carrier": "Glo",
       "tunnelType": "SSH_SSL_SNI",
       "sniHost": "glo.com",
-      "payload": "CONNECT [host_port] HTTP/1.1[crlf]Host: glo.com[crlf]X-Online-Host: glo.com[crlf]Connection: Keep-Alive[crlf][crlf]",
-      "remoteProxy": "104.16.24.4:80"
-    },
-    {
-      "id": "mtn_500mb_daily",
-      "name": "MTN 500MB / Cloudflare",
-      "country": "Nigeria",
-      "carrier": "MTN",
-      "tunnelType": "SSH_WEBSOCKET",
-      "sniHost": "cdn.cloudflare.net",
-      "payload": "GET / HTTP/1.1[crlf]Host: 3h-unitedstates3.09vpn.com[crlf]Upgrade: websocket[crlf]Connection: Upgrade[crlf][crlf]",
       "remoteProxy": "104.16.24.4:80"
     }
   ]

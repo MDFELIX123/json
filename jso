@@ -1,56 +1,79 @@
 {
+  "version": 1,
   "servers": [
     {
-      "id": "us_1",
-      "name": "United States #1",
+      "id": "us_09vpn_ip",
+      "name": "United States #1 🇺🇸",
       "flag": "🇺🇸",
-      "host": "us1.vpn-node.net",
+      "host": "38.107.236.166",
       "sshPort": 443,
       "sslPort": 443,
-      "username": "fast_user",
-      "password": "tunnel_secret_pass"
+      "username": "u3156189202",
+      "password": "u3156189202",
+      "pingMs": 45
     },
     {
-      "id": "de_1",
-      "name": "Germany #1",
-      "flag": "🇩🇪",
-      "host": "de1.vpn-node.net",
+      "id": "us_09vpn_domain",
+      "name": "United States VIP 🇺🇸",
+      "flag": "🇺🇸",
+      "host": "3h-unitedstates3.09vpn.com",
       "sshPort": 443,
       "sslPort": 443,
-      "username": "fast_user",
-      "password": "tunnel_secret_pass"
+      "username": "u3156189202",
+      "password": "u3156189202",
+      "pingMs": 42
     }
   ],
   "tweaks": [
     {
-      "id": "glo_ng",
-      "name": "Glo 0.00KB Free",
+      "id": "ws_tls_direct",
+      "name": "WebSocket TLS Direct",
+      "country": "Global",
+      "carrier": "All Networks",
+      "tunnelType": "SSH_WEBSOCKET",
+      "sniHost": "3h-unitedstates3.09vpn.com",
+      "payload": "GET / HTTP/1.1[crlf]Host: 3h-unitedstates3.09vpn.com[crlf]Upgrade: websocket[crlf]Connection: Upgrade[crlf][crlf]",
+      "remoteProxy": "38.107.236.166:443"
+    },
+    {
+      "id": "ws_no_tls_8880",
+      "name": "WebSocket Direct (Port 8880)",
+      "country": "Global",
+      "carrier": "Direct",
+      "tunnelType": "SSH_WEBSOCKET",
+      "sniHost": "3h-unitedstates3.09vpn.com",
+      "payload": "GET / HTTP/1.1[crlf]Host: 3h-unitedstates3.09vpn.com[crlf]Upgrade: websocket[crlf]Connection: Upgrade[crlf][crlf]",
+      "remoteProxy": "38.107.236.166:8880"
+    },
+    {
+      "id": "ssl_tls_direct",
+      "name": "Direct SSL / TLS (Port 443)",
+      "country": "Global",
+      "carrier": "Direct",
+      "tunnelType": "SSH_SSL_SNI",
+      "sniHost": "3h-unitedstates3.09vpn.com",
+      "payload": "",
+      "remoteProxy": ""
+    },
+    {
+      "id": "glo_free_unlimited",
+      "name": "Glo 0.00KB Free Unlimited",
       "country": "Nigeria",
       "carrier": "Glo",
       "tunnelType": "SSH_SSL_SNI",
       "sniHost": "glo.com",
-      "payload": "CONNECT [host_port] HTTP/1.1[crlf]Host: glo.com[crlf]X-Online-Host: glo.com[crlf][crlf]",
+      "payload": "CONNECT [host_port] HTTP/1.1[crlf]Host: glo.com[crlf]X-Online-Host: glo.com[crlf]Connection: Keep-Alive[crlf][crlf]",
       "remoteProxy": "104.16.24.4:80"
     },
     {
-      "id": "mtn_ng",
-      "name": "MTN 500MB Daily",
+      "id": "mtn_500mb_daily",
+      "name": "MTN 500MB / Cloudflare",
       "country": "Nigeria",
       "carrier": "MTN",
       "tunnelType": "SSH_WEBSOCKET",
       "sniHost": "cdn.cloudflare.net",
-      "payload": "GET / HTTP/1.1[crlf]Host: cdn.cloudflare.net[crlf]Upgrade: websocket[crlf][crlf]",
+      "payload": "GET / HTTP/1.1[crlf]Host: 3h-unitedstates3.09vpn.com[crlf]Upgrade: websocket[crlf]Connection: Upgrade[crlf][crlf]",
       "remoteProxy": "104.16.24.4:80"
-    },
-    {
-      "id": "direct_ssl",
-      "name": "Direct SSL / Cloudflare CDN",
-      "country": "Global",
-      "carrier": "Direct",
-      "tunnelType": "SSH_SSL_SNI",
-      "sniHost": "cloudflare.com",
-      "payload": "",
-      "remoteProxy": ""
     }
   ]
 }

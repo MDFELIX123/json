@@ -1,1 +1,56 @@
-
+{
+  "servers": [
+    {
+      "id": "us_1",
+      "name": "United States #1",
+      "flag": "🇺🇸",
+      "host": "us1.vpn-node.net",
+      "sshPort": 443,
+      "sslPort": 443,
+      "username": "fast_user",
+      "password": "tunnel_secret_pass"
+    },
+    {
+      "id": "de_1",
+      "name": "Germany #1",
+      "flag": "🇩🇪",
+      "host": "de1.vpn-node.net",
+      "sshPort": 443,
+      "sslPort": 443,
+      "username": "fast_user",
+      "password": "tunnel_secret_pass"
+    }
+  ],
+  "tweaks": [
+    {
+      "id": "glo_ng",
+      "name": "Glo 0.00KB Free",
+      "country": "Nigeria",
+      "carrier": "Glo",
+      "tunnelType": "SSH_SSL_SNI",
+      "sniHost": "glo.com",
+      "payload": "CONNECT [host_port] HTTP/1.1[crlf]Host: glo.com[crlf]X-Online-Host: glo.com[crlf][crlf]",
+      "remoteProxy": "104.16.24.4:80"
+    },
+    {
+      "id": "mtn_ng",
+      "name": "MTN 500MB Daily",
+      "country": "Nigeria",
+      "carrier": "MTN",
+      "tunnelType": "SSH_WEBSOCKET",
+      "sniHost": "cdn.cloudflare.net",
+      "payload": "GET / HTTP/1.1[crlf]Host: cdn.cloudflare.net[crlf]Upgrade: websocket[crlf][crlf]",
+      "remoteProxy": "104.16.24.4:80"
+    },
+    {
+      "id": "direct_ssl",
+      "name": "Direct SSL / Cloudflare CDN",
+      "country": "Global",
+      "carrier": "Direct",
+      "tunnelType": "SSH_SSL_SNI",
+      "sniHost": "cloudflare.com",
+      "payload": "",
+      "remoteProxy": ""
+    }
+  ]
+}

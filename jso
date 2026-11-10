@@ -22,26 +22,38 @@
       "username": "u3156189202",
       "password": "u3156189202",
       "pingMs": 45
+    },
+    {
+      "id": "havesen_vmess_server",
+      "name": "havesen (V2Ray VMess) 🌐",
+      "flag": "🌐",
+      "host": "chizzyv2ray1.dozapp.xyz",
+      "sshPort": 443,
+      "sslPort": 443,
+      "username": "e29e0675-20ae-4216-97e6-d41e66a832c9",
+      "password": "0",
+      "pingMs": 0
     }
   ],
-{
-  "id": "havesen_vmess_server",
-  "name": "havesen (V2Ray VMess) 🌐",
-  "flag": "🌐",
-  "host": "chizzyv2ray1.dozapp.xyz",
-  "sshPort": 443,
-  "sslPort": 443,
-  "username": "e29e0675-20ae-4216-97e6-d41e66a832c9",
-  "password": "0",
-  "pingMs": 0
-}
   "tweaks": [
+    {
+      "id": "havesen_vmess_tweak",
+      "name": "havesen VMess (WS + TLS 443)",
+      "country": "Global",
+      "carrier": "V2Ray Cloud",
+      "tunnelType": "V2RAY_VMESS",
+      "sniHost": "chizzyv2ray1.dozapp.xyz",
+      "payload": "/vmess",
+      "remoteProxy": "chizzyv2ray1.dozapp.xyz:443"
+    },
     {
       "id": "dropbear_direct_143",
       "name": "Dropbear Direct (Port 143)",
       "country": "Global",
       "carrier": "Direct Dropbear",
       "tunnelType": "SSH_DIRECT",
+      "sniHost": "",
+      "payload": "",
       "remoteProxy": "38.107.236.166:143"
     },
     {
@@ -50,6 +62,8 @@
       "country": "Global",
       "carrier": "Direct Dropbear",
       "tunnelType": "SSH_DIRECT",
+      "sniHost": "",
+      "payload": "",
       "remoteProxy": "38.107.236.166:109"
     },
     {
@@ -78,6 +92,8 @@
       "country": "Global",
       "carrier": "Direct OpenSSH",
       "tunnelType": "SSH_DIRECT",
+      "sniHost": "",
+      "payload": "",
       "remoteProxy": "38.107.236.166:22"
     },
     {
@@ -87,6 +103,7 @@
       "carrier": "Direct TLS",
       "tunnelType": "SSH_SSL_SNI",
       "sniHost": "3h-unitedstates3.09vpn.com",
+      "payload": "",
       "remoteProxy": "38.107.236.166:443"
     },
     {
@@ -96,6 +113,7 @@
       "carrier": "Glo",
       "tunnelType": "SSH_SSL_SNI",
       "sniHost": "glo.com",
+      "payload": "",
       "remoteProxy": "104.16.24.4:80"
     }
   ]

@@ -24,6 +24,17 @@
       "pingMs": 45
     }
   ],
+{
+  "id": "havesen_vmess_server",
+  "name": "havesen (V2Ray VMess) 🌐",
+  "flag": "🌐",
+  "host": "chizzyv2ray1.dozapp.xyz",
+  "sshPort": 443,
+  "sslPort": 443,
+  "username": "e29e0675-20ae-4216-97e6-d41e66a832c9",
+  "password": "0",
+  "pingMs": 0
+}
   "tweaks": [
     {
       "id": "dropbear_direct_143",

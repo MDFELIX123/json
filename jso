@@ -2,28 +2,6 @@
   "version": 1,
   "servers": [
     {
-      "id": "us_fast_ip",
-      "name": "United States #1 (38.107.236.166) 🇺🇸",
-      "flag": "🇺🇸",
-      "host": "38.107.236.166",
-      "sshPort": 143,
-      "sslPort": 443,
-      "username": "u3156189202",
-      "password": "u3156189202",
-      "pingMs": 42
-    },
-    {
-      "id": "us_fast_domain",
-      "name": "United States VIP (09vpn.com) 🇺🇸",
-      "flag": "🇺🇸",
-      "host": "3h-unitedstates3.09vpn.com",
-      "sshPort": 143,
-      "sslPort": 443,
-      "username": "u3156189202",
-      "password": "u3156189202",
-      "pingMs": 45
-    },
-    {
       "id": "havesen_vmess_server",
       "name": "havesen (V2Ray VMess) 🌐",
       "flag": "🌐",
@@ -33,12 +11,94 @@
       "username": "e29e0675-20ae-4216-97e6-d41e66a832c9",
       "password": "0",
       "pingMs": 0
+    },
+    {
+      "id": "france_sshocean_ws",
+      "name": "France - SSH WebSocket 🇫🇷",
+      "flag": "🇫🇷",
+      "host": "fr1.wssht.to",
+      "sshPort": 80,
+      "sslPort": 443,
+      "username": "sshocean-2a2azzzz3",
+      "password": "zzz2z2",
+      "pingMs": 0
+    },
+    {
+      "id": "us_fast_domain",
+      "name": "United States VIP 🇺🇸",
+      "flag": "🇺🇸",
+      "host": "3h-unitedstates3.09vpn.com",
+      "sshPort": 143,
+      "sslPort": 443,
+      "username": "u3156189202",
+      "password": "u3156189202",
+      "pingMs": 0
     }
   ],
   "tweaks": [
     {
-      "id": "havesen_vmess_tweak",
-      "name": "havesen VMess (WS + TLS 443)",
+      "id": "mtn_v2ray_vmess",
+      "name": "MTN 0.00KB - V2Ray VMess (Port 443)",
+      "country": "Nigeria",
+      "carrier": "MTN",
+      "tunnelType": "V2RAY_VMESS",
+      "sniHost": "mtn.com",
+      "payload": "/vmess",
+      "remoteProxy": "chizzyv2ray1.dozapp.xyz:443"
+    },
+    {
+      "id": "mtn_ws_tls_sshocean",
+      "name": "MTN 0.00KB - SSH WebSocket TLS",
+      "country": "Nigeria",
+      "carrier": "MTN",
+      "tunnelType": "SSH_WEBSOCKET",
+      "sniHost": "mtn.com",
+      "payload": "GET wss://mtn.com/ HTTP/1.1[crlf]Host: fr1.wssht.to[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]",
+      "remoteProxy": "fr1.wssht.to:443"
+    },
+    {
+      "id": "mtn_cloudflare_ws",
+      "name": "MTN Cloudflare CDN WebSocket",
+      "country": "Nigeria",
+      "carrier": "MTN",
+      "tunnelType": "SSH_WEBSOCKET",
+      "sniHost": "mtn.com",
+      "payload": "GET / HTTP/1.1[crlf]Host: mtn.com.fr1.wssht.to[crlf]Upgrade: websocket[crlf][crlf]",
+      "remoteProxy": "104.16.24.4:80"
+    },
+    {
+      "id": "glo_v2ray_vmess",
+      "name": "Glo Unlimited - V2Ray VMess (Port 443)",
+      "country": "Nigeria",
+      "carrier": "Glo",
+      "tunnelType": "V2RAY_VMESS",
+      "sniHost": "glo.com",
+      "payload": "/vmess",
+      "remoteProxy": "chizzyv2ray1.dozapp.xyz:443"
+    },
+    {
+      "id": "glo_ws_tls_sshocean",
+      "name": "Glo Free - SSH WebSocket TLS",
+      "country": "Nigeria",
+      "carrier": "Glo",
+      "tunnelType": "SSH_WEBSOCKET",
+      "sniHost": "glo.com",
+      "payload": "GET wss://glo.com/ HTTP/1.1[crlf]Host: fr1.wssht.to[crlf]Upgrade: Websocket[crlf]Connection: Keep-Alive[crlf][crlf]",
+      "remoteProxy": "fr1.wssht.to:443"
+    },
+    {
+      "id": "glo_cloudflare_ws",
+      "name": "Glo Cloudflare CDN WebSocket",
+      "country": "Nigeria",
+      "carrier": "Glo",
+      "tunnelType": "SSH_WEBSOCKET",
+      "sniHost": "glo.com",
+      "payload": "GET / HTTP/1.1[crlf]Host: glo.com.fr1.wssht.to[crlf]Upgrade: websocket[crlf][crlf]",
+      "remoteProxy": "104.16.24.4:80"
+    },
+    {
+      "id": "v2ray_vmess_direct_cloud",
+      "name": "V2Ray VMess (Cloud WS+TLS 443)",
       "country": "Global",
       "carrier": "V2Ray Cloud",
       "tunnelType": "V2RAY_VMESS",
@@ -47,74 +107,24 @@
       "remoteProxy": "chizzyv2ray1.dozapp.xyz:443"
     },
     {
-      "id": "dropbear_direct_143",
-      "name": "Dropbear Direct (Port 143)",
+      "id": "v2ray_vless_cf_ws",
+      "name": "V2Ray VLESS (Cloudflare CDN)",
       "country": "Global",
-      "carrier": "Direct Dropbear",
-      "tunnelType": "SSH_DIRECT",
-      "sniHost": "",
+      "carrier": "Cloudflare CDN",
+      "tunnelType": "V2RAY_VLESS",
+      "sniHost": "cloudflare.com",
+      "payload": "/vmess",
+      "remoteProxy": "104.16.24.4:443"
+    },
+    {
+      "id": "v2ray_trojan_tls",
+      "name": "V2Ray Trojan (Fast TLS 443)",
+      "country": "Global",
+      "carrier": "Trojan TLS",
+      "tunnelType": "V2RAY_TROJAN",
+      "sniHost": "chizzyv2ray1.dozapp.xyz",
       "payload": "",
-      "remoteProxy": "38.107.236.166:143"
-    },
-    {
-      "id": "dropbear_direct_109",
-      "name": "Dropbear Direct (Port 109)",
-      "country": "Global",
-      "carrier": "Direct Dropbear",
-      "tunnelType": "SSH_DIRECT",
-      "sniHost": "",
-      "payload": "",
-      "remoteProxy": "38.107.236.166:109"
-    },
-    {
-      "id": "ws_no_tls_8880",
-      "name": "WebSocket No TLS (Port 8880)",
-      "country": "Global",
-      "carrier": "All Networks",
-      "tunnelType": "SSH_WEBSOCKET",
-      "sniHost": "3h-unitedstates3.09vpn.com",
-      "payload": "GET / HTTP/1.1[crlf]Host: 3h-unitedstates3.09vpn.com[crlf]Upgrade: websocket[crlf][crlf]",
-      "remoteProxy": "38.107.236.166:8880"
-    },
-    {
-      "id": "ws_tls_443",
-      "name": "WebSocket TLS (Port 443)",
-      "country": "Global",
-      "carrier": "All Networks",
-      "tunnelType": "SSH_WEBSOCKET",
-      "sniHost": "3h-unitedstates3.09vpn.com",
-      "payload": "GET wss://bug.com [protocol][crlf]Host: 3h-unitedstates3.09vpn.com[crlf]Upgrade: websocket[crlf][crlf]",
-      "remoteProxy": "38.107.236.166:443"
-    },
-    {
-      "id": "openssh_direct_22",
-      "name": "OpenSSH Direct (Port 22)",
-      "country": "Global",
-      "carrier": "Direct OpenSSH",
-      "tunnelType": "SSH_DIRECT",
-      "sniHost": "",
-      "payload": "",
-      "remoteProxy": "38.107.236.166:22"
-    },
-    {
-      "id": "ssh_ssl_sni_443",
-      "name": "SSL/TLS Direct (Port 443)",
-      "country": "Global",
-      "carrier": "Direct TLS",
-      "tunnelType": "SSH_SSL_SNI",
-      "sniHost": "3h-unitedstates3.09vpn.com",
-      "payload": "",
-      "remoteProxy": "38.107.236.166:443"
-    },
-    {
-      "id": "glo_unlimited_free",
-      "name": "Glo Free Unlimited 0.00KB",
-      "country": "Nigeria",
-      "carrier": "Glo",
-      "tunnelType": "SSH_SSL_SNI",
-      "sniHost": "glo.com",
-      "payload": "",
-      "remoteProxy": "104.16.24.4:80"
+      "remoteProxy": "chizzyv2ray1.dozapp.xyz:443"
     }
   ]
 }
